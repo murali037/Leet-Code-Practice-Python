@@ -26,22 +26,26 @@ def merge(L, R):
     while i < len(L) and j < len(R):
         if L[i] <= R[j]:
             res.append(L[i])
+            print("Merge L[i] < R[j]:")
+            print("L: ", L, "i: ", i, "R: ", R, "j: ", j, "Res: ", res)
             i += 1
-            print("Merge L[i] < R[j] - ", "L: ",L,"i: ",i,"R: ", R,"j: ",j,"Res: ", res)
         else:
             res.append(R[j])
+            print("Merge L[i] > R[j]:")
+            print("L: ", L, "i: ", i, "R: ", R, "j: ", j, "Res: ", res)
             j += 1
-            print("Merge L[i] > R[j] - ", "L: ", L,"i: ",i, "R: ", R,"j: ",j, "Res: ", res)
 
     while i < len(L):
         res.append(L[i])
+        print("Merge i < len(L): ")
+        print("i: ", i, "L: ", L, "Res: ", res)
         i += 1
-        print("Merge i < L - ", "i: ", i, "L: ", L, "Res: ", res)
 
     while j < len(R):
         res.append(R[j])
+        print("Merge j < len(R): ")
+        print("j: ", j, "R: ", R, "Res: ", res)
         j += 1
-        print("Merge j < R - ", "j: ", j, "R: ", R, "Res: ", res)
 
     return res
 
