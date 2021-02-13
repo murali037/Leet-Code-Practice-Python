@@ -1,1 +1,18 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        
+        c = len(digits)
+        res = [1]
+        
+        for i in range(c):
+            last = c-1-i
+            
+            if digits[last]==9:
+                digits[last]=0
+                print(digits)
+                continue
+            digits[last] += 1
+            return digits
 
+        return res + digits
+        
