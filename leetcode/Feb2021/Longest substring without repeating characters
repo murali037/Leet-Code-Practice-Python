@@ -1,0 +1,46 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        
+        start = 0
+        max_len = 0
+        d = {}
+        
+        for i in range(len(s)):
+            if s[i] in d:
+                start = max(start, i)
+                d.clear()
+                print(i,start)
+            else:
+                d[s[i]] = i
+                max_len = max(max_len,i-start+1)
+                print("max_len:",i,start, max_len)
+                
+        return max_len
+        
+        
+        
+        
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        
+
+        st = 0
+        max_len = 0
+        cmap = {}
+        
+        for ed in range(len(s)):
+            r = s[ed]
+            if r in cmap:
+			# update the index of  window_start (st) variable by 1 whenever a character repeats
+                st = max(st, cmap[r] + 1)
+            cmap[r] = ed
+            max_len = max(max_len, ed-st+1)
+            
+        return max_len
+        
+        
+        
+        
+        
+        
+        
