@@ -18,7 +18,7 @@ def rec(n,c,h):
     if x == 1:
         return(print('TRUE'))
     if x in h.values():
-        return(print('FALSE'))
+        return(print('FALSE')) 
     h[c] = x
     c +=1
     rec(x,c,h)
